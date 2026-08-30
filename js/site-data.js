@@ -23,6 +23,7 @@ const defaultData = {
   ],
   footerHeadOffice: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
   contactHeadOffice: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
+  contactPhone: "+63 995 156 9259 (<strong><em style=\"color:#a3d65c;\">Whatsapp</em></strong> / <strong><em style=\"color:#8a5cf6;\">Viber</em></strong>)",
   products: [
     {
       title: "Pipes – Seamless & Welded",
@@ -196,7 +197,7 @@ const applySiteData = (data) => {
   setText("footer-contact", site.footerContact || "");
   setText("footer-phone", site.footerPhone || "");
   setText("contact-email", site.contactEmail);
-  setText("contact-phone", site.contactPhone);
+  setHTML("contact-phone", site.contactPhone || "");
   setText("contact-address", site.contactAddress || "");
   setText("contact-head-office", site.contactHeadOffice || site.footerHeadOffice || site.headOffice);
   const yearNode = document.getElementById("year");
