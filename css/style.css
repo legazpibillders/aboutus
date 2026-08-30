@@ -419,6 +419,23 @@ img {
   cursor: pointer;
 }
 
+.form-status {
+  margin-top: 18px;
+  min-height: 24px;
+  font-weight: 700;
+  color: #0f766e;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.form-status.error {
+  color: #b91c1c;
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
 @media (max-width: 900px) {
   .card-grid,
   .three-col,
