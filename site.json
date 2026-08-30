@@ -28,6 +28,48 @@
   "contactEmail": "sales.legazpi@gmail.com",
   "contactPhone": "+63 995 156 9259",
   "contactAddress": "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
+  "products": [
+    {
+      "title": "Pipes – Seamless & Welded",
+      "description": "Seamless and welded piping solutions for industrial and energy applications.",
+      "image": "assets/products/pipes-seamless-welded.png"
+    },
+    {
+      "title": "Pipe Fittings",
+      "description": "Elbows, tees, reducers, and other fittings to project specifications.",
+      "image": "assets/products/pipe-fittings.png"
+    },
+    {
+      "title": "Flanges",
+      "description": "Flanges in various sizes, pressure classes, materials, and configurations.",
+      "image": "assets/products/flanges.png"
+    },
+    {
+      "title": "Electrical Components",
+      "description": "Electrical materials and components for industrial projects and installations.",
+      "image": "assets/products/electrical-components.png"
+    },
+    {
+      "title": "Gate Valves",
+      "description": "Industrial gate valves for reliable flow isolation and demanding service conditions.",
+      "image": "assets/products/gate-valves.png"
+    },
+    {
+      "title": "Fasteners",
+      "description": "Stud bolts, machine bolts, U-bolts, anchor bolts, nuts, and related fastening products.",
+      "image": "assets/products/fasteners.png"
+    },
+    {
+      "title": "Engineered Components",
+      "description": "Custom-fabricated and machined components manufactured to drawings and specifications.",
+      "image": "assets/products/engineered-components.png"
+    },
+    {
+      "title": "Stainless & Exotic Materials",
+      "description": "SS 304/304L, SS 316/316L, Duplex, Super Duplex, and other corrosion-resistant materials.",
+      "image": "assets/products/stainless-exotic-materials.png"
+    }
+  ],
   "services": [
     {
       "title": "General Construction",
