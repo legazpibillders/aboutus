@@ -344,9 +344,30 @@ img {
   min-height: 300px;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80");
+  background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url("../assets/Home_Background.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.page-about .page-hero {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("../assets/about-background.png");
+}
+
+body.page-products .page-hero {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("../assets/products-background.png");
+}
+
+body.page-services .page-hero {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("../assets/services-background.png");
+}
+
+body.page-careers .page-hero {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("../assets/careers-background.png");
+}
+
+body.page-contact .page-hero {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url("../assets/contact-background.png");
 }
 
 .page-hero-overlay {
