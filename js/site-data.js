@@ -26,28 +26,44 @@ const defaultData = {
   footerPhone: "+63 995 156 9259",
   services: [
     {
-      title: "General Construction",
-      description: "Civil and structural works for industrial, commercial, and public infrastructure projects."
+      title: "Pipes – Seamless & Welded",
+      description: "Seamless and welded piping solutions for industrial and energy applications.",
+      image: "assets/products/pipes-seamless-welded.png"
     },
     {
-      title: "Telecom Infrastructure",
-      description: "Rooftop towers, cell site works, and telecom installations across the Philippines."
+      title: "Pipe Fittings",
+      description: "Elbows, tees, reducers, and other fittings to project specifications.",
+      image: "assets/products/pipe-fittings.png"
     },
     {
-      title: "Residential & Commercial Buildings",
-      description: "Construction, renovation, and fit-out works for private residential and commercial developments."
+      title: "Flanges",
+      description: "Flanges in various sizes, pressure classes, materials, and configurations.",
+      image: "assets/products/flanges.png"
     },
     {
-      title: "Electrical & Mechanical Works",
-      description: "Power distribution, instrumentation, and electromechanical installations and maintenance."
+      title: "Electrical Components",
+      description: "Electrical materials and components for industrial projects and installations.",
+      image: "assets/products/electrical-components.png"
     },
     {
-      title: "Tower Erection",
-      description: "Greenfield and rooftop erection works supported by skilled field crews and technical expertise."
+      title: "Gate Valves",
+      description: "Industrial gate valves for reliable flow isolation and demanding service conditions.",
+      image: "assets/products/gate-valves.png"
     },
     {
-      title: "Design & Build Services",
-      description: "Architectural planning, engineering drawings, and integrated project execution from concept to completion."
+      title: "Fasteners",
+      description: "Stud bolts, machine bolts, U-bolts, anchor bolts, nuts, and related fastening products.",
+      image: "assets/products/fasteners.png"
+    },
+    {
+      title: "Engineered Components",
+      description: "Custom-fabricated and machined components manufactured to drawings and specifications.",
+      image: "assets/products/engineered-components.png"
+    },
+    {
+      title: "Stainless & Exotic Materials",
+      description: "SS 304/304L, SS 316/316L, Duplex, Super Duplex, and other corrosion-resistant materials.",
+      image: "assets/products/stainless-exotic-materials.png"
     }
   ],
   contactEmail: "sales.legazpi@gmail.com",
@@ -80,8 +96,13 @@ const renderServices = (items) => {
     .map(
       (service) => `
         <article class="service-card">
-          <h3>${service.title}</h3>
-          <p>${service.description}</p>
+          <div class="service-media">
+            <img src="${service.image || ""}" alt="${service.title}" />
+          </div>
+          <div class="service-copy">
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+          </div>
         </article>
       `
     )
