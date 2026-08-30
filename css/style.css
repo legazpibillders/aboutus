@@ -239,7 +239,7 @@ img {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 18px;
 }
 
 .wide-grid {
@@ -280,7 +280,7 @@ img {
 }
 
 .service-copy {
-  padding: 22px 22px 26px;
+  padding: 18px 18px 20px;
 }
 
 .service-card h3,
@@ -301,13 +301,19 @@ img {
 }
 
 .service-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: #0f172a;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.8rem);
 }
 
 .service-card p {
-  line-height: 1.6;
+  line-height: 1.45;
+  text-align: justify;
+}
+
+.service-card p strong {
+  color: #0f172a;
+  font-weight: 800;
 }
 
 .highlight-band {
