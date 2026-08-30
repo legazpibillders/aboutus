@@ -114,8 +114,18 @@ const defaultData = {
     },
     {
       title: "Welding & Preventive Maintenance Consultancy Services",
-      description: "We provide practical welding and preventive maintenance consultancy supported by Professional Mechanical Engineers, Welding Engineers, and CSWIP 3.1 Certified Welding Inspectors. Services include welding procedure and qualification review, troubleshooting, weld repair, material selection, failure analysis, and maintenance support. Applicable standards include ASME Section IX, ASME B31.3, AWS D1.1, API 6A, and NACE MR0175/ISO 15156, as required by the project.",
+      description: "We provide practical welding and preventive maintenance consultancy supported by <strong>Professional Mechanical Engineers</strong>, <strong>Welding Engineers</strong>, and <strong>CSWIP 3.1 Certified Welding Inspectors</strong>. Services include welding procedure and qualification review, troubleshooting, weld repair, material selection, failure analysis, and maintenance support. Applicable standards include <strong>ASME Section IX, ASME B31.3, AWS D1.1, API 6A</strong>, and <strong>NACE MR0175/ISO 15156</strong>, as required by the project.",
       image: "assets/services/welding-preventive-maintenance-consultancy-services.png"
+    },
+    {
+      title: "Heavy Equipment Rental Services",
+      description: "We provide reliable, long-term heavy equipment rental and leasing solutions tailored to support extended construction, industrial, and infrastructure development projects. Our well-maintained, high-performance fleet includes heavy-duty <strong>Cranes</strong> for complex lifting operations, <strong>Dump Trucks</strong> for large-scale material hauling, <strong>Excavators</strong> for deep earthmoving and site preparation, and industrial <strong>Forklifts</strong> for material handling. To ensure uninterrupted project continuity and maximum operational efficiency, all our long-term rental packages come complete with comprehensive preventative maintenance, dedicated technical support, and options for certified, safety-compliant operators.",
+      image: "assets/services/heavy-equipment-rental-services.svg"
+    },
+    {
+      title: "Wastewater Treatment Facility (WTF) & STP Installation",
+      description: "We provide end-to-end design, civil works, and installation of <strong>Sewage Treatment Plants (STPs)</strong> fully compliant with <strong>DENR DAO 2016-08</strong> and <strong>DAO 2021-19</strong> standards. Whether for small commercial properties or high-rise developments, we engineer efficient systems that meet strict Class C effluent limits for hassle-free permitting.\n\n<strong>Small Buildings:</strong> Compact, space-saving modular underground STPs (MBBR/SBR technology) designed for quick footprint integration, low maintenance, and high organic waste removal.\n\n<strong>Large Buildings:</strong> Heavy-duty, fully automated multi-stage systems (MBR technology) built for high-volume wastewater, featuring advanced nutrient removal (Ammonia & Phosphate) and disinfection.\n\nWe provide complete, end-to-end solutions including <strong>DENR Permitting Support</strong> for Authority to Construct and Wastewater Discharge Permit requirements, full <strong>Electro-Mechanical & Civil Works Installation</strong>, and final <strong>Testing, Commissioning, & DENR-Accredited Lab Sampling</strong> to ensure total regulatory compliance.",
+      image: "assets/services/wastewater-treatment-facility-stp-installation.png"
     }
   ],
   contactEmail: "sales.legazpi@gmail.com",
@@ -153,7 +163,7 @@ const renderCatalog = (items, pageKey) => {
           </div>
           <div class="service-copy">
             <h3>${item.title}</h3>
-            <p>${item.description}</p>
+            <p>${(item.description || "").replace(/\n+/g, "<br>")}</p>
           </div>
         </article>
       `
