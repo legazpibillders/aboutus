@@ -4,7 +4,7 @@ const defaultData = {
   heroTitle: "Reliable construction solutions across the Philippines.",
   heroSubtitle: "We deliver civil, structural, and electromechanical services for private and government sectors with focus on quality, safety, and dependable execution.",
   aboutTitle: "Building durable infrastructure and dependable partnerships.",
-  aboutSummary: "Legaspi Billders Construction is a sole proprietorship engaged in civil, structural and electromechanical services across the Philippines, serving both private and government sectors. Primary operational regions: Bicol Region, Metro Manila, and North Luzon with strong presence in telecom and power projects.",
+  aboutSummary: "<strong>Legaspi Billders Construction</strong> is a sole proprietorship engaged in civil, structural and electromechanical services across the Philippines, serving both private and government sectors. Primary operational regions: Bicol Region, Metro Manila, and North Luzon with strong presence in telecom and power projects.",
   mission: "To deliver world-class construction services that exceed client expectations through skilled execution, integrity, and continuous improvement.",
   vision: "To be a leading construction partner in the Philippines, recognized for quality, innovation, and reliability in infrastructure and telecommunication development.",
   whyChooseUs: [
@@ -21,9 +21,8 @@ const defaultData = {
     "Works in telecom, energy, infrastructure, and building projects",
     "Committed to quality and long-term client relationships"
   ],
-  footerAddress: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
-  footerContact: "sales.legazpi@gmail.com",
-  footerPhone: "+63 995 156 9259",
+  footerHeadOffice: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
+  contactHeadOffice: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
   products: [
     {
       title: "Pipes – Seamless & Welded",
@@ -130,13 +129,20 @@ const defaultData = {
   ],
   contactEmail: "sales.legazpi@gmail.com",
   contactPhone: "+63 995 156 9259",
-  contactAddress: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001"
+  contactAddress: ""
 };
 
 const setText = (id, value) => {
   const node = document.getElementById(id);
   if (node && value) {
     node.textContent = value;
+  }
+};
+
+const setHTML = (id, value) => {
+  const node = document.getElementById(id);
+  if (node && value) {
+    node.innerHTML = value;
   }
 };
 
@@ -180,17 +186,19 @@ const applySiteData = (data) => {
   setText("hero-title", site.heroTitle);
   setText("hero-subtitle", site.heroSubtitle);
   setText("about-title", site.aboutTitle);
-  setText("about-summary", site.aboutSummary);
+  setHTML("about-summary", site.aboutSummary);
   setText("mission-text", site.mission);
   setText("vision-text", site.vision);
   setList("why-list", site.whyChooseUs);
   setList("strengths-list", site.companyStrengths);
-  setText("footer-address", site.footerAddress);
-  setText("footer-contact", site.footerContact);
-  setText("footer-phone", site.footerPhone);
+  setText("footer-address", site.footerAddress || "");
+  setText("footer-head-office", site.footerHeadOffice || site.contactHeadOffice || site.headOffice);
+  setText("footer-contact", site.footerContact || "");
+  setText("footer-phone", site.footerPhone || "");
   setText("contact-email", site.contactEmail);
   setText("contact-phone", site.contactPhone);
-  setText("contact-address", site.contactAddress);
+  setText("contact-address", site.contactAddress || "");
+  setText("contact-head-office", site.contactHeadOffice || site.footerHeadOffice || site.headOffice);
   const yearNode = document.getElementById("year");
   if (yearNode) yearNode.textContent = new Date().getFullYear();
 
