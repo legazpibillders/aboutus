@@ -47,15 +47,17 @@
           </div>
           <div class="contact-card">
             <h3>Send a Message</h3>
-            <form class="contact-form" action="https://formsubmit.co/sales.legazpi@gmail.com" method="POST">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/sales.legazpi@gmail.com" method="POST">
               <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required />
               <input type="email" name="email" placeholder="Email Address" aria-label="Email Address" required />
               <input type="text" name="subject" placeholder="Subject of the inquiry" aria-label="Subject of the inquiry" required />
               <textarea rows="5" name="message" placeholder="Your Message" aria-label="Your Message" required></textarea>
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New message from Legaspi Billders website" />
+              <input type="hidden" name="_next" value="https://legazpibillders.github.io/aboutus/contact.html?submitted=1" />
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <div id="form-status" class="form-status" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -83,7 +85,16 @@
     <script src="js/site-data.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector(".contact-form");
+        const status = document.getElementById("form-status");
+        if (!status) return;
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("submitted") === "1") {
+          status.textContent = "Thank you! Your message has been sent successfully.";
+          status.classList.add("success");
+        }
+
+        const form = document.getElementById("contactForm");
         if (!form) return;
 
         const subjectField = form.querySelector('input[name="subject"]');
