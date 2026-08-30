@@ -61,3 +61,4 @@ Your site will be available at:
 ## Notes
 
 This starter matches the clean corporate style of the example reference site and is easy to extend later.
+Website refreshed on 2026-08-30
