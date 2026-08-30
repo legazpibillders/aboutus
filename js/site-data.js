@@ -24,7 +24,7 @@ const defaultData = {
   footerAddress: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001",
   footerContact: "sales.legazpi@gmail.com",
   footerPhone: "+63 995 156 9259",
-  services: [
+  products: [
     {
       title: "Pipes – Seamless & Welded",
       description: "Seamless and welded piping solutions for industrial and energy applications.",
@@ -66,6 +66,58 @@ const defaultData = {
       image: "assets/products/stainless-exotic-materials.png"
     }
   ],
+  services: [
+    {
+      title: "General Construction",
+      description: "Civil and structural works for industrial, commercial, and public infrastructure projects.",
+      image: "assets/services/general-construction.png"
+    },
+    {
+      title: "Electrical and Mechanical Works",
+      description: "Power-related systems, installation support, commissioning, and maintenance for operational continuity.",
+      image: "assets/services/electrical-mechanical-works.png"
+    },
+    {
+      title: "Tower Erection",
+      description: "Greenfield and rooftop erection works supported by technical expertise and experienced field teams.",
+      image: "assets/services/tower-erection.png"
+    },
+    {
+      title: "Design and Build Services",
+      description: "Architectural planning, engineering drawings, and complete project execution from concept to completion.",
+      image: "assets/services/design-build-services.png"
+    },
+    {
+      title: "Site Development and Installation Works",
+      description: "Ground preparation, utilities support, and installation services for reliable project readiness.",
+      image: "assets/services/site-development-installation-works.png"
+    },
+    {
+      title: "Civil and Structural Works",
+      description: "Reliable project execution for structural upgrades, building works, and durable infrastructure support.",
+      image: "assets/services/civil-structural-works.png"
+    },
+    {
+      title: "Telecom Infrastructure",
+      description: "Rooftop towers, cell site implementation, and telecom installations built for dependable coverage and uptime.",
+      image: "assets/services/telecom-infrastructure.png"
+    },
+    {
+      title: "Residential and Commercial Building Projects",
+      description: "Complete building works, renovation, and fit-out solutions for private and commercial developments.",
+      image: "assets/services/residential-commercial-building-projects.png"
+    },
+    {
+      title: "Renovation and Fit-Out Works",
+      description: "Interior and exterior upgrades that improve functionality, appearance, and operational efficiency.",
+      image: "assets/services/renovation-fit-out-works.png"
+    },
+    {
+      title: "Welding & Preventive Maintenance Consultancy Services",
+      description: "We provide practical welding and preventive maintenance consultancy supported by Professional Mechanical Engineers, Welding Engineers, and CSWIP 3.1 Certified Welding Inspectors. Services include welding procedure and qualification review, troubleshooting, weld repair, material selection, failure analysis, and maintenance support. Applicable standards include ASME Section IX, ASME B31.3, AWS D1.1, API 6A, and NACE MR0175/ISO 15156, as required by the project.",
+      image: "assets/services/welding-preventive-maintenance-consultancy-services.png"
+    }
+  ],
   contactEmail: "sales.legazpi@gmail.com",
   contactPhone: "+63 995 156 9259",
   contactAddress: "Mezzanine Level, 776 San Sebastian St., Quiapo, Manila 1001"
@@ -86,22 +138,22 @@ const setList = (id, items) => {
   node.innerHTML = values.map((item) => `<li>${item}</li>`).join("");
 };
 
-const renderServices = (items) => {
+const renderCatalog = (items, pageKey) => {
   const target = document.getElementById("services-grid");
   if (!target) return;
 
-  const serviceItems = Array.isArray(items) && items.length ? items : defaultData.services;
+  const catalogItems = Array.isArray(items) && items.length ? items : defaultData[pageKey] || defaultData.services;
 
-  target.innerHTML = serviceItems
+  target.innerHTML = catalogItems
     .map(
-      (service) => `
+      (item) => `
         <article class="service-card">
           <div class="service-media">
-            <img src="${service.image || ""}" alt="${service.title}" />
+            <img src="${item.image || ""}" alt="${item.title}" />
           </div>
           <div class="service-copy">
-            <h3>${service.title}</h3>
-            <p>${service.description}</p>
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
           </div>
         </article>
       `
@@ -132,7 +184,8 @@ const applySiteData = (data) => {
   const yearNode = document.getElementById("year");
   if (yearNode) yearNode.textContent = new Date().getFullYear();
 
-  renderServices(site.services);
+  const pageKey = document.body.classList.contains("page-products") ? "products" : "services";
+  renderCatalog(site[pageKey], pageKey);
 };
 
 fetch("site.json")
