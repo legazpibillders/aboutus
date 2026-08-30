@@ -50,6 +50,7 @@
             <form class="contact-form" action="https://formsubmit.co/sales.legazpi@gmail.com" method="POST">
               <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required />
               <input type="email" name="email" placeholder="Email Address" aria-label="Email Address" required />
+              <input type="text" name="subject" placeholder="Subject of the inquiry" aria-label="Subject of the inquiry" required />
               <textarea rows="5" name="message" placeholder="Your Message" aria-label="Your Message" required></textarea>
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New message from Legaspi Billders website" />
@@ -80,6 +81,22 @@
     </footer>
 
     <script src="js/site-data.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".contact-form");
+        if (!form) return;
+
+        const subjectField = form.querySelector('input[name="subject"]');
+        const hiddenSubject = form.querySelector('input[name="_subject"]');
+
+        if (subjectField && hiddenSubject) {
+          form.addEventListener("submit", () => {
+            const value = subjectField.value.trim();
+            hiddenSubject.value = value || "New message from Legaspi Billders website";
+          });
+        }
+      });
+    </script>
   </body>
 </html>
 
